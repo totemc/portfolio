@@ -6,13 +6,13 @@ import { LearningService } from './learning.service';
   styleUrls: ['./learning.component.sass']
 })
 export class LearningComponent implements OnInit {
-  private currentlyLearning;
+  private cards;
   constructor(private learningService: LearningService) { }
 
   ngOnInit() {
     this.learningService.getLearning().subscribe(
       learnings => {
-        this.currentlyLearning = learnings;
+        this.cards = learnings.slice(0,3);
       }
     );
   }

@@ -1,6 +1,15 @@
-<div class='card mv2 pa2 ml2-ns'>
-    Here are some tasks that I'm currently working on:
-    <div *ngIf='currentlyLearning'>
-        {{currentlyLearning.learning}}
-    </div>
+<div class='card mv2 pa2 ml2-ns h5-ns pa4'>
+  <div class='fl w-100 center'>
+      <span class='f4 lh-copy'>Here are some tasks that I'm currently working on:</span>
+      <div *ngIf='cards' class='fl w-100'>
+          <div class='flex-ns justify-center-ns pa4'>
+            <div *ngFor="let card of cards" class='fl w-100 pa4 pv1-ns ph4'>
+                {{card.name}}
+                <div *ngFor='let label of card.labels'>
+                  <span [style.color]="label.color">{{label.name}}</span>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
 </div>

@@ -7,12 +7,12 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LearningService {
-  private mockUrl: string = 'http://my-json-server.typicode.com/totemc/demo/currently';
+  private mockUrl: string = 'http://my-json-server.typicode.com/totemc/demo/cards';
 
   constructor(private http: HttpClient) { }
 
-  getLearning(): Observable<string> {
-    return this.http.get<string>(this.mockUrl);
+  getLearning(): Observable<any[]> {
+    return this.http.get<any[]>(this.mockUrl);
   }
 
 
